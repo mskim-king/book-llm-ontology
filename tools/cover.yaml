@@ -1,0 +1,9 @@
+# 표지 설정 — 수정 후 python tools/build_cover.py
+vol: 4
+title: "LLM × *온톨로지*|무엇을 해야할까?"
+title_size: 104
+primary: violet
+secondary: pink
+icons: ["🧠", "🌐", "🔗"]
+keywords: [RDF·OWL·SKOS, 지식그래프, GraphRAG, 시스템 설계]
+author: ""
