@@ -32,7 +32,7 @@
 시리즈 전체 소개: [AI 시대 데이터 실무 4부작](https://wikidocs.net/wiki/9013/)
 
 - [AI 300% 활용법](https://wikidocs.net/book/22293)
-- 가명정보 A to Z (준비 중)
+- [가명정보 A to Z](https://wikidocs.net/book/22299)
 - 파이썬으로 시작하는 실전 퀀트 투자 (준비 중)
 
 ## 저자
