@@ -1,0 +1,40 @@
+# 책 전체에서 쓰는 예제 데이터 (모든 회사·사람·제품은 가상입니다)
+@prefix ex:   <http://example.org/onto#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# ---------- 스키마(온톨로지) ----------
+ex:Organization a owl:Class ; rdfs:label "조직"@ko .
+ex:Company      a owl:Class ; rdfs:subClassOf ex:Organization ; rdfs:label "회사"@ko .
+ex:Person       a owl:Class ; rdfs:label "사람"@ko .
+ex:Employee     a owl:Class ; rdfs:subClassOf ex:Person ; rdfs:label "직원"@ko .
+ex:Industry     a owl:Class ; rdfs:label "산업"@ko .
+ex:Product      a owl:Class ; rdfs:label "제품"@ko .
+
+ex:worksFor    a owl:ObjectProperty ; rdfs:domain ex:Person ; rdfs:range ex:Company ; rdfs:label "근무한다"@ko .
+ex:suppliesTo  a owl:ObjectProperty ; rdfs:domain ex:Company ; rdfs:range ex:Company ; rdfs:label "공급한다"@ko .
+ex:competesWith a owl:ObjectProperty , owl:SymmetricProperty ; rdfs:domain ex:Company ; rdfs:range ex:Company ; rdfs:label "경쟁한다"@ko .
+ex:inIndustry  a owl:ObjectProperty ; rdfs:domain ex:Company ; rdfs:range ex:Industry ; rdfs:label "속한 산업"@ko .
+ex:makes       a owl:ObjectProperty ; rdfs:domain ex:Company ; rdfs:range ex:Product ; rdfs:label "만든다"@ko .
+ex:foundedYear a owl:DatatypeProperty ; rdfs:domain ex:Company ; rdfs:range xsd:integer ; rdfs:label "설립연도"@ko .
+
+# ---------- 데이터(지식그래프) ----------
+ex:Electronics a ex:Industry ; rdfs:label "전자"@ko .
+ex:BatteryMaterial a ex:Industry ; rdfs:label "2차전지 소재"@ko .
+ex:Chemical a ex:Industry ; rdfs:label "화학"@ko .
+
+ex:AElec a ex:Company ; rdfs:label "A전자"@ko ; ex:inIndustry ex:Electronics ; ex:foundedYear 1990 ;
+    ex:makes ex:PhoneX ; ex:competesWith ex:CElec .
+ex:CElec a ex:Company ; rdfs:label "C전자"@ko ; ex:inIndustry ex:Electronics ; ex:foundedYear 2001 .
+ex:BMat  a ex:Company ; rdfs:label "B소재"@ko ; ex:inIndustry ex:BatteryMaterial ; ex:foundedYear 2008 ;
+    ex:makes ex:CathodeY ; ex:suppliesTo ex:AElec .
+ex:DChem a ex:Company ; rdfs:label "D화학"@ko ; ex:inIndustry ex:Chemical ; ex:foundedYear 1975 ;
+    ex:suppliesTo ex:BMat , ex:CElec .
+
+ex:PhoneX   a ex:Product ; rdfs:label "스마트폰 X"@ko .
+ex:CathodeY a ex:Product ; rdfs:label "양극재 Y"@ko .
+
+ex:Minjun a ex:Employee ; rdfs:label "김민준"@ko ; ex:worksFor ex:AElec .
+ex:Seoyeon a ex:Employee ; rdfs:label "이서연"@ko ; ex:worksFor ex:BMat .
