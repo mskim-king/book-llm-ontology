@@ -48,9 +48,10 @@ python code/01_rdf_basics.py
 | `06_llm_to_triples.py` | LLM 추출 결과 검증·반영 | 04-2 |
 | `07_schema_prompt.py` | 온톨로지에서 추출 프롬프트 생성 | 05-1 |
 | `08_graphrag.py` | GraphRAG 근거 구성 | 05-2 |
-| `09_evaluate.py` | 정밀도·재현율·F1 | 06-1 |
-| `10_consistency.py` | 모순 검사 | 06-2 |
-| `11_supply_risk.py` | 공급망 핵심 노드 | 07-1 |
+| `09_evaluate.py` | 정밀도·재현율·F1 | 07-1 |
+| `10_consistency.py` | 모순 검사 | 07-2 |
+| `11_supply_risk.py` | 공급망 핵심 노드 | 08-1 |
+| `12_hybrid_rag.py` | 벡터·그래프·하이브리드 검색과 라우터 | 06-1 |
 
 모든 예제는 GitHub Actions로 자동 실행 검사를 합니다.
 
@@ -70,4 +71,4 @@ python code/01_rdf_basics.py
 
 - 90-2. 용어집
 - 📚 03-1. 트리플스토어 vs 그래프 데이터베이스
-- 📚 08-1. 기법·도구 업데이트 노트
+- 📚 09-1. 기법·도구 업데이트 노트

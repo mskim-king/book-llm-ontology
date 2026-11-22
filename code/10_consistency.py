@@ -1,4 +1,4 @@
-"""06-2. 논리적 일관성 검사 — SPARQL로 모순·이상 데이터 찾기"""
+"""07-2. 논리적 일관성 검사 — SPARQL로 모순·이상 데이터 찾기"""
 from rdflib import Literal
 from common import load, EX
 

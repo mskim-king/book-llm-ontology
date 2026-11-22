@@ -74,5 +74,6 @@ MCP(Model Context Protocol)는 AI 애플리케이션이 외부 도구·데이터
 ## 관련 페이지
 
 - 05-2. GraphRAG 이해와 구현
+- 📚 06-5. 역할별 LLM 모델 활용법
 - 📚 03-2. SPARQL 기초
 - 📚 『AI 300% 활용법』 07-2. MCP: AI와 도구를 잇는 표준

@@ -69,6 +69,18 @@ chapters:
       - { slug: agents,        title: 온톨로지 기반 AI 에이전트, tags: [LLM, 에이전트] }
 
   - id: "06"
+    slug: rag-system
+    title: RAG와 LLM 시스템 설계
+    summary: RAG의 종류와 온톨로지의 관계, 앞으로의 LLM 활용 방향, 그리고 원하는 지식 시스템을 설계하고 LLM을 역할별로 배치하는 방법을 다룹니다.
+    pages:
+      - { slug: rag-map,          title: "RAG 한눈에 보기: 벡터·그래프·하이브리드", tags: [RAG, 설계] }
+      - { slug: future-llm,       title: 앞으로 LLM을 어떻게 활용할까, tags: [LLM, 전략] }
+      - { slug: why-ontology-now, title: 온톨로지 구축이 더 중요해지는 이유, tags: [온톨로지, 전략] }
+      - { slug: architecture,     title: 원하는 시스템을 만드는 설계 방법, tags: [설계, 아키텍처] }
+      - { slug: model-roles,      title: 역할별 LLM 모델 활용법, tags: [LLM, 모델] }
+      - { slug: design-principles, title: 설계 원칙과 체크리스트, tags: [설계] }
+
+  - id: "07"
     slug: evaluation
     title: 평가와 품질
     summary: 온톨로지와 GraphRAG의 품질을 측정하고 점검하는 방법입니다.
@@ -77,7 +89,7 @@ chapters:
       - { slug: consistency, title: 논리적 일관성 검사, tags: [평가] }
       - { slug: rag-eval,    title: GraphRAG 성능 평가, tags: [평가, RAG] }
 
-  - id: "07"
+  - id: "08"
     slug: projects
     title: 실전 프로젝트
     summary: 금융·개인정보·사내 지식 온톨로지를 직접 만들어 봅니다.
@@ -86,7 +98,7 @@ chapters:
       - { slug: privacy,  title: 개인정보 항목 온톨로지, tags: [프로젝트, 개인정보], see_also: ["가명정보 A to Z — AI 시대의 가명정보"] }
       - { slug: company,  title: 사내 지식 온톨로지, tags: [프로젝트] }
 
-  - id: "08"
+  - id: "09"
     slug: trends
     title: 최신 동향
     summary: 빠르게 변하는 기법과 도구의 변화를 기록합니다.
