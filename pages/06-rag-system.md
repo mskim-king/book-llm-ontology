@@ -10,6 +10,8 @@ RAG의 종류와 온톨로지의 관계, 앞으로의 LLM 활용 방향, 그리�
 
 [[/TIP]]
 
+![RAG 방식별 특성 비교](../assets/p06-rag-radar.png)
+
 ## 이 장의 구성
 
 [[SubPages]]
