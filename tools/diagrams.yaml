@@ -3,6 +3,7 @@ theme:
   book: LLM × 온톨로지 무엇을 해야할까?
   primary: violet
   secondary: pink
+  style: fun
 
 diagrams:
   - file: ch01-triple.png
