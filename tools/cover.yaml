@@ -7,3 +7,12 @@ secondary: pink
 icons: ["🧠", "🌐", "🔗"]
 keywords: [RDF·OWL·SKOS, 지식그래프, GraphRAG, 시스템 설계]
 author: ""
+
+# ---- 재미 표지 (style: fun) ----
+style: fun
+bg: "#F1E8FF"
+hook: "'자바'는 섬일까, 프로그래밍 언어일까?"
+hero: "🧠"
+bubble: "단어 말고|관계를 알려 줘요!"
+stickers: ["🔗", "🌐", "🕸️", "✨"]
+burst: "GraphRAG|까지|한 번에"
