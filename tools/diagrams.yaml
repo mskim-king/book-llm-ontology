@@ -3,6 +3,7 @@ theme:
   book: LLM × 온톨로지 무엇을 해야할까?
   primary: violet
   secondary: pink
+  style: fun
 
 diagrams:
   - file: ch01-triple.png
@@ -351,3 +352,382 @@ diagrams:
       - { icon: "🔌", title: 교체 가능하게, desc: "모델·저장소를\n부품처럼 바꿀 수 있게", color: cyan }
       - { icon: "🧑‍🔬", title: 사람 검토 고리, desc: "새 지식은 검토 후 반영\n기록은 남김", color: amber }
       - { icon: "📏", title: 평가 내장, desc: "평가 세트로\n바꿀 때마다 측정", color: emerald }
+
+  # ---------- 데이터 시각화 (chart · network · sankey · timeline) ----------
+  - file: p01-1-kg-network.png
+    kicker: 01-1 · 온톨로지란
+    layout: network
+    height: 500
+    arrows: true
+    title: 지식 그래프는 *관계*를 저장합니다
+    subtitle: 점(개체)과 이름 붙은 선(관계) — 표에 흩어진 사실이 한 그림으로 이어집니다 (가상 예시)
+    groups:
+      회사: violet
+      사람: pink
+      제품: cyan
+      분야: amber
+    nodes:
+    - name: 한빛전자
+      group: 회사
+      x: 480
+      y: 250
+      size: 86
+    - name: 김민지
+      group: 사람
+      x: 150
+      y: 110
+      size: 56
+    - name: 별빛상사
+      group: 회사
+      x: 150
+      y: 400
+      size: 60
+    - name: 스마트워치 S1
+      group: 제품
+      x: 820
+      y: 110
+      size: 58
+    - name: 무선이어폰 B2
+      group: 제품
+      x: 820
+      y: 400
+      size: 58
+    - name: 웨어러블
+      group: 분야
+      x: 1020
+      y: 250
+      size: 50
+    links:
+    - - 김민지
+      - 한빛전자
+      - CEO
+    - - 한빛전자
+      - 별빛상사
+      - 인수
+    - - 한빛전자
+      - 스마트워치 S1
+      - 제조
+    - - 한빛전자
+      - 무선이어폰 B2
+      - 제조
+    - - 스마트워치 S1
+      - 웨어러블
+      - 분류
+    - - 무선이어폰 B2
+      - 웨어러블
+      - 분류
+    curveness: 0.06
+    note: '"한빛전자의 웨어러블 제품은?"처럼 관계를 따라가는 질문에 정확히 답할 수 있습니다'
+  - file: p02-standards-network.png
+    kicker: CHAPTER 02 · 표준
+    layout: network
+    height: 480
+    arrows: true
+    title: W3C 표준은 *서로 이렇게* 연결됩니다
+    subtitle: RDF가 바탕, 그 위에 어휘·추론(RDFS·OWL), 분류체계(SKOS), 검증(SHACL), 질의(SPARQL)
+    groups:
+      데이터 모델: violet
+      어휘·추론: pink
+      분류·검증: cyan
+      질의: amber
+    nodes:
+    - name: RDF
+      group: 데이터 모델
+      x: 500
+      y: 260
+      size: 92
+    - name: RDFS
+      group: 어휘·추론
+      x: 250
+      y: 90
+      size: 60
+    - name: OWL
+      group: 어휘·추론
+      x: 60
+      y: 200
+      size: 64
+    - name: SKOS
+      group: 분류·검증
+      x: 760
+      y: 90
+      size: 60
+    - name: SHACL
+      group: 분류·검증
+      x: 940
+      y: 260
+      size: 60
+    - name: SPARQL
+      group: 질의
+      x: 500
+      y: 470
+      size: 64
+    links:
+    - - RDFS
+      - RDF
+      - 어휘 정의
+    - - OWL
+      - RDFS
+      - 확장·추론
+    - - SKOS
+      - RDF
+      - 분류체계 표현
+    - - SHACL
+      - RDF
+      - 모양 검증
+    - - SPARQL
+      - RDF
+      - 질의
+    curveness: 0.0
+    note: '모두 RDF 트리플(주어-술어-목적어) 위에서 동작합니다 — 출처: W3C 각 명세 (02장 근거·출처)'
+  - file: p02-standards-timeline.png
+    kicker: CHAPTER 02 · 표준
+    layout: timeline
+    title: 시맨틱 웹 표준 *권고* 연표
+    subtitle: W3C 권고안(Recommendation) 발행 연월
+    events:
+    - date: '2004.2'
+      title: RDF·OWL
+      desc: 첫 권고안
+      color: violet
+    - date: '2008.1'
+      title: SPARQL
+      desc: 질의 언어
+      color: amber
+    - date: '2009.8'
+      title: SKOS
+      desc: 분류체계
+      color: cyan
+    - date: '2009.10'
+      title: OWL 2
+      desc: 표현력 확장
+      color: pink
+    - date: '2013.3'
+      title: SPARQL 1.1
+      desc: 갱신·집계
+      color: amber
+    - date: '2014.2'
+      title: RDF 1.1
+      desc: 개정
+      color: violet
+    - date: '2017.7'
+      title: SHACL
+      desc: 데이터 검증
+      color: cyan
+    note: 오래된 표준이지만 LLM 시대에 '의미를 고정하는 장치'로 다시 주목받고 있습니다 (06-3)
+  - file: p06-1-rag-sankey.png
+    kicker: 06-1 · RAG 지도
+    layout: sankey
+    height: 460
+    title: 질문 유형에 따라 *검색 경로*가 달라집니다
+    subtitle: 질문(왼쪽) → 검색 방식(가운데) → 답의 근거(오른쪽) · 흐름 굵기는 설명용
+    nodes:
+    - name: 사실 찾기 질문
+      color: slate
+    - name: 관계·다단계 질문
+      color: slate
+    - name: 요약·전체 질문
+      color: slate
+    - name: 벡터 검색
+      color: cyan
+    - name: 그래프 검색
+      color: violet
+    - name: 하이브리드
+      color: pink
+    - name: 문서 조각
+      color: emerald
+    - name: 관계 경로
+      color: emerald
+    - name: 커뮤니티 요약
+      color: emerald
+    links:
+    - - 사실 찾기 질문
+      - 벡터 검색
+      - 4
+    - - 사실 찾기 질문
+      - 하이브리드
+      - 1
+    - - 관계·다단계 질문
+      - 그래프 검색
+      - 3
+    - - 관계·다단계 질문
+      - 하이브리드
+      - 2
+    - - 요약·전체 질문
+      - 그래프 검색
+      - 2
+    - - 요약·전체 질문
+      - 하이브리드
+      - 1
+    - - 벡터 검색
+      - 문서 조각
+      - 4
+    - - 그래프 검색
+      - 관계 경로
+      - 3
+    - - 그래프 검색
+      - 커뮤니티 요약
+      - 2
+    - - 하이브리드
+      - 문서 조각
+      - 2
+    - - 하이브리드
+      - 관계 경로
+      - 2
+    note: 관계를 따라가야 하는 질문일수록 그래프(온톨로지)의 몫이 커집니다
+  - file: p06-rag-radar.png
+    kicker: CHAPTER 06 · RAG 시스템
+    layout: chart
+    kind: radar
+    height: 460
+    max: 5
+    title: RAG 방식별 *특성 비교*
+    subtitle: 5점에 가까울수록 유리 (이 책의 설명용 평가)
+    indicators:
+    - 구축 쉬움
+    - 관계 질문
+    - 출처 추적
+    - 일관된 용어
+    - 운영 비용 낮음
+    series:
+    - name: 벡터 RAG
+      data:
+      - 5
+      - 2
+      - 3
+      - 2
+      - 4
+      color: cyan
+    - name: GraphRAG
+      data:
+      - 2
+      - 5
+      - 4
+      - 5
+      - 2
+      color: violet
+    - name: 하이브리드
+      data:
+      - 3
+      - 4
+      - 5
+      - 4
+      - 3
+      color: pink
+    note: 작게 시작할 땐 벡터 RAG, 관계·용어 정합이 중요해지면 온톨로지를 더한 하이브리드로
+  - file: p07-1-eval-bar.png
+    kicker: 07-1 · 평가 지표
+    layout: chart
+    kind: bar
+    height: 420
+    title: 예제 GraphRAG의 *평가 결과 읽기*
+    subtitle: 같은 질문 10개를 세 방식으로 답하게 했을 때 정답 수 (설명용 가상 수치)
+    categories:
+    - 단순 사실
+    - 2단계 관계
+    - 3단계 관계
+    - 집계 질문
+    max: 10
+    series:
+    - name: LLM 단독
+      data:
+      - 6
+      - 3
+      - 1
+      - 2
+      color: slate
+    - name: 벡터 RAG
+      data:
+      - 9
+      - 5
+      - 2
+      - 3
+      color: cyan
+    - name: GraphRAG
+      data:
+      - 9
+      - 8
+      - 7
+      - 8
+      color: violet
+    note: 질문이 여러 단계의 관계를 거칠수록 차이가 커집니다 — 내 데이터로 직접 측정하세요 (07장)
+
+  # ---------- 재미 그림 (만화 · 채팅) ----------
+  - file: p01-4-comic-java.png
+    kicker: 01-4 · 왜 LLM 시대에 온톨로지인가
+    layout: comic
+    columns: 2
+    title: '"자바"는 섬일까, *언어*일까, 커피일까?'
+    subtitle: 같은 단어, 다른 뜻 — 온톨로지가 의미를 정해 주는 4컷 (가상의 이야기)
+    panels:
+    - color: violet
+      scene: 🙋 ❓ 🤖
+      bubbles:
+      - who: 🙋
+        side: left
+        text: 자바 관련 자료 정리해 줘!
+      - who: 🤖
+        side: right
+        text: 네! 자바섬의 화산, 자바 커피 원두, 자바 프로그래밍 문법을 정리했어요.
+      caption: LLM은 단어만 보고 뜻을 짐작합니다
+    - color: red
+      sfx: 으악!
+      scene: 🏝️ ☕ 💻
+      bubbles:
+      - who: 🙋
+        side: left
+        text: 아니, 우리 개발팀 자료라고!
+      - who: 🤖
+        side: right
+        text: 맥락이 부족해서 세 가지 뜻을 다 섞었어요…
+      caption: 뜻이 섞이면 엉뚱한 답이 나옵니다
+    - color: pink
+      scene: 🗂️ 🔗 🏷️
+      bubbles:
+      - who: 🧑‍🔬
+        side: left
+        text: 온톨로지에 정의해 두자. '자바' 는 프로그래밍언어 클래스, 우리 회사 '결제서버'가 사용한다.
+      - who: 🤖
+        side: right
+        text: 의미와 관계가 정해지니 헷갈리지 않아요!
+      caption: 개념·관계를 정해 두는 것이 온톨로지
+    - color: emerald
+      sfx: 정확!
+      scene: 💻 ✅ 📚
+      bubbles:
+      - who: 🙋
+        side: left
+        text: 자바 관련 자료 정리해 줘!
+      - who: 🤖
+        side: right
+        text: '결제서버에서 쓰는 자바 버전과 관련 문서 5건입니다. (근거: 사내 지식 그래프)'
+      caption: 온톨로지 + LLM = 맥락에 맞는 답
+    note: LLM이 '말을 잘하는 능력'이라면, 온톨로지는 '뜻을 고정해 주는 사전'입니다
+  - file: p05-2-chat-graphrag.png
+    kicker: 05-2 · GraphRAG
+    layout: chat
+    title: 벡터 검색이 *못 찾는* 질문
+    subtitle: 관계를 여러 번 따라가야 하는 질문엔 그래프가 필요합니다 (가상의 대화)
+    chat_title: 💬 AI 개발팀 단톡방
+    messages:
+    - name: 주니어 서윤
+      avatar: 🐰
+      text: 챗봇에 "한빛전자 협력사 중에서 소송 중인 회사는?"이라고 물었더니 엉뚱한 답이 나와요 😢
+    - name: 시니어 태오
+      avatar: 🐻
+      text: 벡터 검색은 질문과 *비슷한 문장 조각*을 찾아 와. 그런데 이 질문은 한 문서에 답이 없지?
+      side: right
+    - name: 주니어 서윤
+      avatar: 🐰
+      text: 맞아요. '협력사 목록'은 A 문서, '소송 기사'는 B 문서에 있어요.
+    - name: 시니어 태오
+      avatar: 🐻
+      text: 그래서 *GraphRAG*! 한빛전자 →(협력사)→ 별빛상사 →(소송)→ 사건 X 처럼 관계를 따라가서 답을 찾는 거야.
+      side: right
+    - name: 주니어 서윤
+      avatar: 🐰
+      text: 아하, 관계를 두 번 건너는 질문이라 그래프가 필요했군요!
+    - name: 시니어 태오
+      avatar: 🐻
+      text: 응. 답할 때 지나온 *관계 경로*를 근거로 보여 주면 검증도 쉬워져 👍
+      side: right
+    note: 사실 찾기는 벡터 검색, 관계를 여러 번 건너는 질문은 그래프 검색 — 둘을 섞으면 하이브리드
