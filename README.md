@@ -33,7 +33,7 @@
 
 - [AI 300% 활용법](https://wikidocs.net/book/22293)
 - [가명정보 A to Z](https://wikidocs.net/book/22299)
-- 파이썬으로 시작하는 실전 퀀트 투자 (준비 중)
+- [파이썬으로 시작하는 실전 퀀트 투자](https://wikidocs.net/book/22336)
 
 ## 저자
 
